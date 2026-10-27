@@ -1,0 +1,284 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #f7f9fc;
+  --card: #fff;
+  --text: #172033;
+  --muted: #718096;
+  --primary: #6757e8;
+  --soft: #f0eeff;
+  --border: #ddd;
+}
+
+body {
+  font: 15px Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+body.dark {
+  --bg: #10121a;
+  --card: #191c27;
+  --text: #fff;
+  --muted: #aaa;
+  --soft: #292544;
+  --border: #333;
+}
+
+button {
+  border: 0;
+  padding: 10px 16px;
+  border-radius: 20px;
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: .85;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 6px 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.hide {
+  display: none !important;
+}
+
+#auth {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.card {
+  width: 370px;
+  max-width: 90%;
+  padding: 30px;
+  background: var(--card);
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 40px #0002;
+}
+
+.card h1 {
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.card h2 {
+  margin-bottom: 12px;
+}
+
+.card p {
+  margin: 12px;
+  color: var(--primary);
+  cursor: pointer;
+}
+
+.card b {
+  color: red;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 700px);
+  max-width: 900px;
+  margin: auto;
+}
+
+aside {
+  min-height: 100vh;
+  padding: 25px 15px;
+  border-right: 1px solid var(--border);
+}
+
+aside h1 {
+  color: var(--primary);
+  margin-bottom: 25px;
+}
+
+aside button {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  background: transparent;
+  color: var(--text);
+  text-align: left;
+}
+
+aside button:hover {
+  background: var(--soft);
+  color: var(--primary);
+}
+
+main {
+  min-width: 0;
+  background: var(--card);
+  min-height: 100vh;
+}
+
+section > h2 {
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.compose {
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+textarea {
+  height: 80px;
+  resize: vertical;
+}
+
+.compose button {
+  float: right;
+  margin-top: 5px;
+}
+
+.compose::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.post, .user {
+  padding: 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.post p {
+  margin: 10px 0;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.post button {
+  background: transparent;
+  color: var(--muted);
+  padding: 7px;
+}
+
+.post button:hover {
+  color: var(--primary);
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user div {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+#search {
+  margin: 20px;
+  width: calc(100% - 40px);
+}
+
+#profileBox {
+  text-align: center;
+  padding: 25px;
+}
+
+#profileBox button {
+  background: var(--soft);
+  color: var(--primary);
+  margin: 5px;
+}
+
+.likebox, .repostbox {
+  margin-top: 10px;
+  padding: 10px;
+  background: var(--soft);
+  border-radius: 10px;
+  overflow-wrap: anywhere;
+}
+
+.likebox small,
+.repostbox small {
+  display: block;
+  margin: 5px 0;
+}
+
+.profile-link {
+  color: var(--primary);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.profile-link:hover {
+  text-decoration: underline;
+}
+
+.repost-label {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+#backBtn {
+  margin: 12px;
+}
+
+#postsHeading {
+  padding: 15px 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+@media (max-width: 650px) {
+  #app {
+    display: block;
+  }
+
+  aside {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5px;
+    z-index: 5;
+    background: var(--card);
+  }
+
+  aside h1 {
+    display: none;
+  }
+
+  aside button {
+    text-align: center;
+    padding: 8px 5px;
+    margin: 0;
+    font-size: 12px;
+  }
+
+  main {
+    padding-bottom: 65px;
+  }
+
+  .card {
+    width: 90%;
+  }
+}

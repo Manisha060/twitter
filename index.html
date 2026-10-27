@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chirp</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="auth">
+  <div class="card">
+    <h1>✦ Chirp</h1>
+
+    <div id="login">
+      <h2>Login</h2>
+      <input id="lu" placeholder="Username">
+      <input id="lp" type="password" placeholder="Password">
+      <button onclick="login()">Sign In</button>
+      <p onclick="showReg()">Create Account</p>
+      <b id="err"></b>
+    </div>
+
+    <div id="reg" class="hide">
+      <h2>Register</h2>
+      <input id="rn" placeholder="Name">
+      <input id="ru" placeholder="Username">
+      <input id="rp" type="password" placeholder="Password">
+      <button onclick="register()">Register</button>
+      <p onclick="showLogin()">Login</p>
+    </div>
+  </div>
+</div>
+
+<div id="app" class="hide">
+  <aside>
+    <h1>✦</h1>
+    <button onclick="page('home')">⌂ Home</button>
+    <button onclick="page('explore')">⌕ Explore</button>
+    <button onclick="page('profile')">◎ Profile</button>
+    <button onclick="theme()">🌙 Theme</button>
+    <button onclick="logout()">↪ Logout</button>
+  </aside>
+
+  <main>
+    <section id="home">
+      <h2>Home</h2>
+      <div class="compose">
+        <textarea id="post" maxlength="280"
+          placeholder="What's happening?"></textarea>
+        <button onclick="createPost()">Chirp</button>
+      </div>
+      <div id="feed"></div>
+    </section>
+
+    <section id="explore" class="hide">
+      <h2>Explore</h2>
+      <input id="search" placeholder="Search people..."
+        oninput="searchUsers()">
+      <div id="users"></div>
+    </section>
+
+    <section id="profile" class="hide">
+      <h2 id="profileHeading">Profile</h2>
+      <button id="backBtn" class="hide" onclick="backToProfile()">
+        ← My Profile
+      </button>
+      <div id="profileBox"></div>
+      <div id="list"></div>
+      <h3 id="postsHeading">My Chirps</h3>
+      <div id="myPosts"></div>
+    </section>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
